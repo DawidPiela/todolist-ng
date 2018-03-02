@@ -1,0 +1,36 @@
+<div class="panel">
+    <h1 class="text-center">To Do List</h1>
+    <div class="input-group mb-3">
+        <input
+                type="text"
+                class="form-control"
+                placeholder="Task Content"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                [(ngModel)]="taskContent">
+        <div class="input-group-append">
+            <button
+                    [disabled]="!taskContent"
+                    (click)="onAddTask()"
+                    class="btn btn-outline-primary"
+                    type="button">Add Task</button>
+        </div>
+    </div>
+    <ul class="list-group">
+        <li
+                *ngFor="let task of tasks; let i = index"
+                class="list-group-item d-flex justify-content-between align-items-center p-0 mb-2 rounded">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                </div>
+            </div>
+            {{ task }}
+            <div class="input-group-append">
+                <button
+                        (click)="onRemoveTask(i)"
+                        class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </div>
+        </li>
+    </ul>
+</div>

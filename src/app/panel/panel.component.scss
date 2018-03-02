@@ -1,0 +1,15 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+}
+
+@mixin py {
+  padding-top: ($spacer * .72) !important;
+  padding-bottom: ($spacer * .72) !important;
+}
+
+.input-group-text {
+  @include py;
+}
